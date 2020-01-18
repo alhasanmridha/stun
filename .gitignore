@@ -1,5 +1,5 @@
 nbproject/
-
+build/
 *.o
 *.gch
 *.a
@@ -13,3 +13,12 @@ stunclient.exe
 stunserver.exe
 stuntestcode.exe
 
+.vscode/
+CMakeCache.txt
+CMakeFiles/
+build.ninja
+cmake_install.cmake
+common/cmake_install.cmake
+networkutils/cmake_install.cmake
+rules.ninja
+stuncore/cmake_install.cmake
