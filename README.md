@@ -66,22 +66,22 @@ Prerequisites before compiling and running.
   Debian/Ubuntu/Mint
   
   ```
-      sudo apt-get install g++
-      sudo apt-get install cmake
-      sudo apt-get install libboost-dev # For Boost
-      sudo apt-get install libssl-dev # For OpenSSL
+  sudo apt-get install g++
+  sudo apt-get install cmake
+  sudo apt-get install libboost-dev # For Boost
+  sudo apt-get install libssl-dev # For OpenSSL
 ```
   RedHat/Fedora and EC2 Amazon Linux AMI
   ```
-      sudo yum groupinstall "Development Tools" # For g++, make, et. al.
-      sudo yum install boost-devel # For Boost
-      sudo yum install openssl-devel # For OpenSSL
+  sudo yum groupinstall "Development Tools" # For g++, make, et. al.
+  sudo yum install boost-devel # For Boost
+  sudo yum install openssl-devel # For OpenSSL
 ```
   Solaris and Mac
-      OpenSSL is already installed on Solaris and is not needed on Mac.
+  OpenSSL is already installed on Solaris and is not needed on Mac.
 
   Manual Boost install
-    The compiled Boost runtime is not necessary. Just obtaining and unpacking
+  The compiled Boost runtime is not necessary. Just obtaining and unpacking
     the Boost source code distribution from www.boost.org will suffice. If you
     do not have the adminstrative privaleges to install the Boost distribution
     into a standard system include path, you may uncomment and edit the top
