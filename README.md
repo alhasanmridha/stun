@@ -1,4 +1,4 @@
-STUNTMAN - An open source STUN server
+STUN - An open source STUN server
 Version 1.2.15
 Nov 24, 2018
 ---------------------------------------------------------
