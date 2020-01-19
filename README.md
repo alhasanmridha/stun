@@ -1,11 +1,8 @@
-STUN - An open source STUN server
-Version 1.2.15
-Nov 24, 2018
+STUN
 ---------------------------------------------------------
+A C++ STUN client for getting NAT type and external IP
 
-
-Features:
-
+This is a fork of stunserver originally created by gselbie (https://github.com/jselbie/stunserver)
   Compliant with the latest RFCs including 5389, 5769, and 5780. Also includes
   backwards compatibility for RFC 3489.
 
@@ -24,8 +21,6 @@ Features:
   mode.
 
   Open source Apache license. See LICENSE file fore more details.
----------------------------------------------------------
-
 
 Known issues:
 
@@ -45,19 +40,6 @@ Known issues:
   your own authentication provider code are described in the file
   "server/sampleauthprovider.h".
 
-  Dependency checking is not implemented in the Makefile. So if you need to
-  recompile, I recommend "make clean" from the root to preceed any subsequent
-  "make" call.
-
-  If you run an instance of stunserver locally, you may observe that
-  "stunclient localhost" may not successfully work. This is because the server
-  is not listening on the loopback adapter when running in full mode. The
-  workaround is to specify the actual IP address that the server is listening
-  on. Type "ifconfig" to discover your IP address (e.g. 10.11.12.13) followed
-  by "stunclient 10.11.12.13"
----------------------------------------------------------
-
-
 Testing:
 
   Fedora 15 with gcc/g++ 4.6.0
@@ -71,10 +53,9 @@ Testing:
   Solaris 11 with gcc/g++ 4.5.2
 
   Parsing code has been fuzz tested with zzuf. http://caca.zoy.org/wiki/zzuf
----------------------------------------------------------
-
 
 Prerequisites before compiling and running.
+---------------------------------------------
 
   The short summary is that you need a C++ compiler (g++ preferred or
   clang++), GNU make, Boost header files, and the OpenSSL development files in
@@ -83,21 +64,21 @@ Prerequisites before compiling and running.
   need.
 
   Debian/Ubuntu/Mint
+  
+  ```
       sudo apt-get install g++
-      sudo apt-get install make
+      sudo apt-get install cmake
       sudo apt-get install libboost-dev # For Boost
       sudo apt-get install libssl-dev # For OpenSSL
-
+```
   RedHat/Fedora and EC2 Amazon Linux AMI
+  ```
       sudo yum groupinstall "Development Tools" # For g++, make, et. al.
       sudo yum install boost-devel # For Boost
       sudo yum install openssl-devel # For OpenSSL
-
+```
   Solaris and Mac
       OpenSSL is already installed on Solaris and is not needed on Mac.
-
-      Install Boost locally as per instructions below, then uncomment and edit
-      the top line of the common.inc file.
 
   Manual Boost install
     The compiled Boost runtime is not necessary. Just obtaining and unpacking
@@ -118,28 +99,27 @@ Prerequisites before compiling and running.
      pthreads and perl. I've never come across a system where this wasn't
      already pre-installed.
 
----------------------------------------------------------
-
-
 Compiling and running
+----------------------
+Got Boost and OpenSSL taken care of as described above? Good. Just type
+```
+cmake -H. -Bbuild
+cmake --build build
+```
 
-  Got Boost and OpenSSL taken care of as described above? Good. Just type
-  "make" (or "gmake" on some systems). There will be three resulting binaries
-  in the root of the source code package produced.
-
+The binaries will be created in respective directories inside build directory i.e location of the server will be build/server/.
   stuntestcode - This is the unit test code. I highly recommend you run this
   program first. When run, you'll see a series of lines being printed in
   regards to different code paths being tested. If you see any line that ends
   in "FAIL", we likely have a bug. Please contact me immediately if you see
   this.
 
-  stunserver - this is the server binary. Run "./stunserver --help" for
+  stunserver - this is the server binary. Run "./build/server/server --help" for
   details on running this program. Running this program without any command
   line arguments defaults to listening on port 3478 on all adapters.
 
-  stunclient - this is the client test binary. Run "./stunclient --help" for
-  details on running this program. Example: "./stunclient stun.selbie.com"
----------------------------------------------------------
+  stunclient - this is the client test binary. Run "./build/client/client --help" for
+  details on running this program. Example: "./build/client/client stun.l.google.com 19302"
 
 
 Firewall
@@ -166,15 +146,12 @@ Feature roadmap (the features I want to implement in a subsequent release)
 Docker
 
 1. `docker image build -t=stun-server-image .`
-2. `docker container run -d -p 3478:3478/tcp -p 3478:3478/udp
---name=stun-container stun-server-image`
+2. `docker container run -d -p 3478:3478/tcp -p 3478:3478/udp --name=stun-container stun-server-image`
 
 ---------------------------------------------------------
 
 
 Contact the author
-
-  John Selbie
-  john@selbie.com
+mdalhasanmridha@gmail.com
 
 
