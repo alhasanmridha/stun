@@ -13,7 +13,7 @@ testratelimiter.cpp
 testreader.cpp
 testrecvfromex.cpp)
 
-add_executable(test ${SOURCES})
+add_executable(teststun ${SOURCES})
 target_link_libraries(
-  test ${CMAKE_PROJECT_NAME}_common ${CMAKE_PROJECT_NAME}_stuncore
+  teststun ${CMAKE_PROJECT_NAME}_common ${CMAKE_PROJECT_NAME}_stuncore
   ${CMAKE_PROJECT_NAME}_networkutils)
