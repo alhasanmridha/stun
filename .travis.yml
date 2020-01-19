@@ -1,11 +1,10 @@
 dist: trusty
-sudo: true
+sudo: false
 
 language: cpp
 before_install:
-  -sudo apt install g++
-  -sudo apt install libboost-dev # For Boost
-  -sudo apt install libssl-dev # For OpenSSL
+  -apt install libboost-dev # For Boost
+  -apt install libssl-dev # For OpenSSL
 script:
   - cmake -H. -Bbuild
   - cmake --build build
