@@ -22,7 +22,7 @@ This is the cmake version of [stunserver] (https://github.com/jselbie/stunserver
 
   Open source Apache license. See LICENSE file fore more details.
 
-Known issues:
+##### Known issues:
 
   TLS mode has yet to be implemented.
 
@@ -40,7 +40,7 @@ Known issues:
   your own authentication provider code are described in the file
   "server/sampleauthprovider.h".
 
-Testing:
+##### Testing:
 
   Fedora 15 with gcc/g++ 4.6.0
   Fedora 17 with gcc/g++ 4.72
@@ -80,7 +80,7 @@ Prerequisites before compiling and running.
   Solaris and Mac
   OpenSSL is already installed on Solaris and is not needed on Mac.
 
-  Manual Boost install
+  ##### Manual Boost install
   The compiled Boost runtime is not necessary. Just obtaining and unpacking
     the Boost source code distribution from www.boost.org will suffice. If you
     do not have the adminstrative privaleges to install the Boost distribution
@@ -88,8 +88,8 @@ Prerequisites before compiling and running.
     line of the common.inc file for the BOOST_INCLUDE variable. The common.inc
     file is in the same folder as this README file.
 
-  Manual OpenSSL install
-    You can obtain the OpenSSL development files and runtime from
+  ##### Manual OpenSSL install
+You can obtain the OpenSSL development files and runtime from
     www.openssl.org. On most systems with development tools already installed,
     OpenSSL include files are already installed in the standard include path.
     If this is not the case, you can uncomment and edit the common.inc file to
