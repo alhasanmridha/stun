@@ -4,8 +4,10 @@ set(CMAKE_CXX_STANDARD 14)
 add_definitions(-DDEBUG)
 include_directories(common stuncore networkutils resources)
 
+SET (BOOST_MIN_VERSION "1.55.0")
 find_package(
   Boost
+  ${BOOST_MIN_VERSION}
   COMPONENTS coroutine filesystem system
   REQUIRED)
 if(Boost_FOUND)
