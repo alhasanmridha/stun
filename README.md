@@ -1,7 +1,5 @@
 STUN
 ---------------------------------------------------------
-[![Build Status](https://travis-ci.com/alhasanmridha/stun.svg?branch=master)](https://travis-ci.com/alhasanmridha/stun)
-
 A C++ STUN client for getting NAT type and external IP
 
 This is the cmake version of [stunserver] (https://github.com/jselbie/stunserver) originally created by jselbie.
