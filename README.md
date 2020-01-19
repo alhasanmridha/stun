@@ -2,7 +2,7 @@ STUN
 ---------------------------------------------------------
 A C++ STUN client for getting NAT type and external IP
 
-This is a fork of stunserver originally created by gselbie (https://github.com/jselbie/stunserver)
+This is the cmake version of [stunserver] (https://github.com/jselbie/stunserver) originally created by jselbie.
   Compliant with the latest RFCs including 5389, 5769, and 5780. Also includes
   backwards compatibility for RFC 3489.
 
@@ -127,8 +127,6 @@ Firewall
   Don't forget to configure your firewall to allow traffic for the local ports
   the stunserver will be listening on!
 
----------------------------------------------------------
-
 
 Feature roadmap (the features I want to implement in a subsequent release)
 
@@ -141,15 +139,11 @@ Feature roadmap (the features I want to implement in a subsequent release)
 
   TLS support
 
----------------------------------------------------------
-
 Docker
-
-1. `docker image build -t=stun-server-image .`
-2. `docker container run -d -p 3478:3478/tcp -p 3478:3478/udp --name=stun-container stun-server-image`
-
----------------------------------------------------------
-
+```
+docker image build -t=stun-server-image
+docker container run -d -p 3478:3478/tcp -p 3478:3478/udp --name=stun-container stun-server-image
+```
 
 Contact the author
 mdalhasanmridha@gmail.com
