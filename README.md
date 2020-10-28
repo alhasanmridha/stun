@@ -2,7 +2,7 @@ STUN
 ---------------------------------------------------------
 A C++ STUN client for getting NAT type and external IP
 
-This is the cmake version of [stunserver] (https://github.com/jselbie/stunserver) originally created by jselbie.
+This is the cmake version of [stunserver](https://github.com/jselbie/stunserver) originally created by jselbie.
   Compliant with the latest RFCs including 5389, 5769, and 5780. Also includes
   backwards compatibility for RFC 3489.
 
